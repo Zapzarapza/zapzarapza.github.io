@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacked Timeline Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Stacked Timeline Visualizer</h1>
+    <p>Upload a CSV file to create the visualization.</p>
+    <p>The CSV must have columns: <code>id</code>, <code>start</code>, <code>end</code></p>
+    <p>
+        <b>Important:</b> ‘start’ and ‘end’ must be formatted as a date/time string that 
+        JavaScript can read (e.g., <code>2024-01-30</code> or <code>2024-10-22T15:00:00</code>).
+
+    </p>
+
+    <input type="file" id="csvFile" accept=".csv">
+
+    <hr>
+
+    <div id="chart-container">
+        </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/papaparse/5.4.1/papaparse.min.js"></script>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
