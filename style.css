@@ -1,0 +1,49 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 20px;
+    background-color: #fcfcfc;
+}
+
+h1 {
+    color: #333;
+}
+
+#chart-container {
+    width: 100%;
+    overflow-x: auto; /* allows horizontal scrolling */
+}
+
+.timeline-chart {
+    font-family: sans-serif;
+}
+
+/* Styling for lines */
+.area {
+    opacity: 0.9;
+    stroke: white;
+    stroke-width: 0.5px;
+}
+
+.area:hover {
+    opacity: 1;
+}
+
+/* Styling for x-axis */
+.x-axis path,
+.x-axis line {
+    stroke: #ddd;
+}
+
+.x-axis text {
+    fill: #555;
+    font-size: 11px;
+}
+
+/* Styling for labels */
+.area-label {
+    fill: #333;
+    font-size: 12px;
+    font-weight: bold;
+    text-anchor: start;
+    pointer-events: none;
+}
