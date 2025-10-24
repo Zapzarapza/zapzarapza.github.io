@@ -5,28 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stacked Timeline Visualizer</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+    /* Small spinner used next to the "Rendering…" indicator */
+    .spinner { width: 14px; height: 14px; border: 2px solid #ccc; border-top-color: #333; border-radius: 50%; display:inline-block; vertical-align: middle; margin-right: 6px; animation: spin 1s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
 </head>
 <body>
 
     <h1>Stacked Timeline Visualizer</h1>
-    <p>Upload a CSV file to create the visualization.</p>
-    <p>The CSV must have columns: <code>id</code>, <code>start</code>, <code>end</code></p>
-    <p>
-        <b>Important:</b> ‘start’ and ‘end’ must be formatted as a date/time string that 
-        JavaScript can read (e.g., <code>2024-01-30</code> or <code>2024-10-22T15:00:00</code>).
+    <p>Edit the CSV data below to update the visualization instantly. Data must include: <code>id</code>, <code>start</code>, <code>end</code> (Date/Time strings).</p>
 
-    </p>
+    <textarea id="csvInput" rows="15" cols="100"></textarea>
 
-    <input type="file" id="csvFile" accept=".csv">
-
-    <hr>
+    <!-- Status area: rendering indicator and parse errors -->
+    <div id="status-bar" style="margin-top: 1rem; margin-bottom: 0.5rem;">
+        <span id="rendering-indicator" style="display:none; font-weight:600;"><span class="spinner" aria-hidden="true"></span>Rendering…</span>
+        <div id="parse-errors" style="color: #b00020; white-space: pre-wrap; margin-top: 0.25rem;"></div>
+    </div>
 
     <div id="chart-container">
-        </div>
+    </div>
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/papaparse/5.4.1/papaparse.min.js"></script>
-    
+    <script type="test/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.6.0/papaparse.min.js"></script>
+
     <script src="script.js"></script>
 
 </body>
